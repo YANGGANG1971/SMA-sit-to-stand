@@ -1,7 +1,7 @@
 # Isokinetic Training Gamified App (Android)
 
 
-** Copyright 
+## Copyright 
 This project was created by Yanggang Feng's lab. We thank all lab members for their contributions to this project.
 This project is an Android application designed for isokinetic training robot**, providing a **gamified user interface** for rehabilitation and training.The app integrates **Bluetooth communication**, **real-time data visualization**, and **Unity-based interactive scenes** to enhance user engagement and training effectiveness.
 
