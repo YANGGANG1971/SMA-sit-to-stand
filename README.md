@@ -1,10 +1,10 @@
 # Source code and data for "Spinal neuromotor rehabilitation using a portable isokinetic training robot"
 
 ## 1. code
-1.1 mobile app
-1.2 Host PC
-1.3 C language
-1.4 Demo for plotting
+### 1.1 mobile app
+### 1.2 Host PC
+### 1.3 C language
+### 1.4 Demo for plotting
 
 ## 2. data
 This repository contains the underlying source data for the main figures and extended data figures presented in the manuscript titled **"Spinal neuromotor rehabilitation using a portable isokinetic training robot"**. 
