@@ -1,4 +1,4 @@
-# Source Data for "Spinal neuromotor rehabilitation using a portable isokinetic training robot"
+# Source code and data for "Spinal neuromotor rehabilitation using a portable isokinetic training robot"
 
 ## 1. code
 1.1 mobile app
