@@ -1,0 +1,4 @@
+--patch-module
+club.hsspace.hs.motorcontrol=_
+--add-reads
+club.hsspace.hs.motorcontrol=ALL-UNNAMED

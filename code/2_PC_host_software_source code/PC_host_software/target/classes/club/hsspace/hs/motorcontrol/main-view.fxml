@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.hsspace.hs.motorcontrol.MainController">
+   <children>
+      <VBox prefWidth="400.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Communication">
+                     <VBox.margin>
+                        <Insets left="5.0" top="2.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="50.0" prefWidth="450.0" spacing="5.0" style="-fx-border-color: black;">
+                     <children>
+                        <Button fx:id="connect" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="200.0" text="Connect" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Port" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="ID" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ComboBox fx:id="interfaces" maxHeight="1.7976931348623157E308" prefWidth="150.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <ComboBox fx:id="connID" maxHeight="1.7976931348623157E308" prefWidth="150.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <SplitPane dividerPositions="0.63" orientation="VERTICAL" prefHeight="650.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+               <items>
+                  <VBox prefHeight="300.0" prefWidth="100.0">
+                     <children>
+                        <TitledPane animated="false" maxHeight="1.7976931348623157E308" text="Operation Mode">
+                           <content>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <RadioButton fx:id="radioOpenLoop" mnemonicParsing="false" text="Open Loop">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioElectric" mnemonicParsing="false" text="Current Mode">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioSpeed" mnemonicParsing="false" text="Speed Mode">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioPosition" mnemonicParsing="false" text="Position Mode">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <RadioButton fx:id="radioDynamic" mnemonicParsing="false" text="Plugging Braking">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioPlugging" mnemonicParsing="false" text="Dynamic Braking">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radioUser" mnemonicParsing="false" text="Custom Mode">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </RadioButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" maxHeight="1.7976931348623157E308" text="PID Parameters" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="setPid" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="SET" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="readPid" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="READ" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Slope (K)">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font></Label>
+                                                <TextField fx:id="pidK" text="0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="P Value">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font></Label>
+                                                <TextField fx:id="pidP" text="0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="I Value">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="pidI" text="0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="D Value">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="pidD" text="0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Limit Max">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="pidMax" text="0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="120.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Limit Min">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="pidMin" text="0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="50.0" prefWidth="418.0">
+                           <children>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Data Transfer" />
+                                    <TextField fx:id="dataInput" promptText="Enter command..." VBox.vgrow="ALWAYS" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <Button fx:id="sendData" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="60.0" text="Send">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <ListView fx:id="msgView" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="clearMsg" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="100.0" text="Clear" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="promptText" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="The MotorControl has started." />
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </children>
+      </VBox>
+      <VBox prefWidth="860.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="200.0" prefWidth="860.0">
+               <children>
+                  <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Run Control">
+                           <VBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </VBox.margin>
+                        </Label>
+                        <GridPane prefWidth="200.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="contCMDValue" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Microsoft YaHei" size="20.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="contValue" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Microsoft YaHei" size="20.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="contCMD" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CMD" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="contReset" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Reset" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="contRun" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Start" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="contCW" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="FWD" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Real-time Log">
+                           <VBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-border-color: black;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="8.0">
+                                       <children>
+                                          <Label text="Current Item">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="recordFile" disable="true">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label fx:id="fileCount" text="File Count: 0">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <ProgressBar fx:id="progress" maxWidth="1.7976931348623157E308" progress="0.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="recordSys" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Sys">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="recordSave" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Save">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="30.0" spacing="10.0">
+                           <children>
+                              <Slider fx:id="hSlider" max="10000.0" min="2.0" value="5000.0" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="pauseLine" alignment="TOP_LEFT" mnemonicParsing="false" text="Pause" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="lineParent" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Slider fx:id="vSlider" max="31.0" min="4.0" orientation="VERTICAL" value="11.0">
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </Slider>
+                              <ScrollBar fx:id="vScroll" blockIncrement="512.0" max="2048.0" min="-2048.0" orientation="VERTICAL" rotate="180.0">
+                                 <HBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </HBox.margin>
+                              </ScrollBar>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="30.0" spacing="10.0">
+                           <children>
+                              <ScrollBar fx:id="hScroll" disable="true" max="0.0" HBox.hgrow="ALWAYS" />
+                              <Label text="x:" />
+                              <TextField fx:id="chartX" disable="true" prefWidth="80.0" text="0" />
+                              <Label text="y:" />
+                              <TextField fx:id="chartY" prefWidth="100.0" text="0" />
+
+                              <Button fx:id="clearLine" mnemonicParsing="false" text="Clear" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <VBox prefHeight="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label text="Channels">
+                                 <VBox.margin>
+                                    <Insets left="5.0" top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TreeView fx:id="channel" maxHeight="340" prefWidth="241.0" style="-fx-border-color: null;" VBox.vgrow="ALWAYS">
+                              </TreeView>
+                           </children>
+
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="50.0" prefWidth="250.0" text="Stiffness Control" >
+                                       <VBox.margin>
+                                          <Insets bottom="5" left="0.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="actStiff" prefHeight="50.0" prefWidth="91.0" text="Actual Pos" >
+                                       <VBox.margin>
+                                          <Insets bottom="5" left="0.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="errorNum" prefHeight="50.0" prefWidth="20.0" text="   0" textFill="GREEN" >
+                                       <VBox.margin>
+                                          <Insets bottom="5" left="0.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="setStiff" maxHeight="150" maxWidth="276.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="280.0" text="Set Stiffness" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="80.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" prefHeight="30" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Input Value">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="5" left="0.0" top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="stiffNum" text="0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Select Value">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="5" left="0.0" top="15.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="Stiff" maxHeight="23.0" prefHeight="23.0" prefWidth="127.0" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets bottom="2.0" left="0.0" right="2.0" top="2.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="129.0" prefWidth="220.0" spacing="30.0">
+                           <children>
+                              <ImageView fitHeight="129.0" fitWidth="252.0" preserveRatio="true" scaleX="1.4" scaleY="1.4" scaleZ="1.2" translateX="20.0" translateY="22.0" HBox.hgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../../../../image/rail.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="slider" fitHeight="48.0" fitWidth="34.0" preserveRatio="true" translateX="-185" translateY="-8.0">
+                                 <image>
+                                    <Image url="@../../../../image/slider.png" />
+                                 </image>
+                              </ImageView>
+
+                           </children>
+                        </HBox>
+                     </children></VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
